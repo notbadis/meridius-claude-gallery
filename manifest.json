@@ -1,30 +1,20 @@
 {
-    "version": "1.0.0",
-    "compatibility": "2.9.0",
-    "id": "mytheme",
-    "name": "Моя тема",
-    "description": "Описание моей темы",
+    "version": "0.3.0",
+    "compatibility": "3.4.0",
+    "id": "claude-cream",
+    "name": "Claude Gallery",
+    "description": "Экспериментальная галерейная тема: почти чёрный фон, графитовые карточки и терракотовые акценты. Вдохновлена референсами Pryzm и палитрой Claude.",
     "repository": {
-        "username": "TopDesignerInTheWorld",
-        "name": "mytheme",
+        "username": "notbadis",
+        "name": "meridius-claude-gallery",
         "branch": "main"
     },
-    "modules": [],
+    "modules": ["gallery.css"],
     "accent": {
-        "primary": "#141414",
-        "secondary": "#E9003F"
-    },
-    "variables": {
-        "my-variable": {
-            "value": "#131313",
-            "name": {
-                "ru": "Моя переменная",
-                "en": "My variable"
-            }
-        }
+        "primary": "#101010",
+        "secondary": "#D4977B"
     },
     "author": {
-        "name": "Вася Пупкин, дизайнер Google",
-        "contact": "https://vk.com/id0"
+        "name": "notbadis"
     }
 }

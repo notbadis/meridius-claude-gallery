@@ -1,79 +1,214 @@
-html.mytheme-mode {
-    --primary: #141414;
-
-    --secondary: #E9003F;
-    --secondary-hover: #c40034;
-    --secondary-opacity-half: #E9003F80;
-    --secondary-hover-opacity: #E9003F40;
-    --secondary-disabled: #99002980;
-
-    --backdrop: #0e0e0e;
-
-    --titlebar: var(--primary);
-
-    --scroll: #545454;
-    --scroll-width: 12px;
+/* Claude Cream — local experimental theme for Meridius 3.4.
+   All rules are scoped to this theme. No layout or track-height overrides.
+   Native element selectors are intentionally conservative: actual coverage
+   depends on the application's DOM and protected properties. */
+html.claude-cream-mode {
+    color-scheme: dark;
+    --primary: #262522;
+    --secondary: #d4977b;
+    --secondary-hover: #e2aa90;
+    --secondary-opacity-half: #d4977b80;
+    --secondary-hover-opacity: #d4977b24;
+    --secondary-disabled: #d4977b70;
+    --backdrop: #262522;
+    --titlebar: #201f1d;
+    --scroll: #625c54;
+    --scroll-width: 8px;
     --scroll-radius: 8px;
-
-    --logo: #ffffff;
-
-    --left: #0e0e0e;
-    --left-queue: #0e0e0e;
-    --left-icons: #ffffff;
-
-    --navigation: #141414;
-    --navigation-text: #ffffff;
-    --navigation-select: #ffffff26;
-
-    --border: #202020;
-    --borderWidth: 2px;
-
-    --player: #0e0e0e;
-    --player-darker: #0b0b0b;
-    --player-slider: #ffffff26;
-    --player-slider-progress: #ffffff52;
-
-    --text: #ffffff;
-    --small-text: #aaaeb4;
-
-    --song-performer: #9a9a9a;
-    --song-title: #e2e5e9;
-    --song-subtitle: #999999;
-    --song-playing: #101010;
-    --song-hover: #11111140;
-
-    --item: rgba(26, 26, 26, var(--alpha));
-    --item-hover: rgba(47, 47, 47, var(--alpha));
-    --item-disabled: #000;
-
-    --field: #1a1a1a;
-
-    --icons: #acacac;
-    --icons-hover: #bdbdbd;
-    --icons-disabled: #303030;
-
-    --no-cover: var(--text);
-    --no-cover-background: #060606;
-
-    --links: #929292;
-    --links-active: #ffffff;
-    --links-hover: #ffffff;
-
-    --buttons-text: #ffffff;
-
-    --tooltip: var(--secondary);
-    --tooltip-text: var(--text);
-
-    --settings-view: #1d1d1d;
-
-    --switch-unchecked: #545454;
-
-    --skeleton-background: rgba(16, 16, 16, var(--alpha));
-    --skeleton-highlight: rgba(22, 22, 22, var(--alpha));
+    --logo: #d4977b;
+    --left: #201f1d;
+    --left-queue: #1c1b19;
+    --left-icons: #b9b0a4;
+    --navigation: #262522;
+    --navigation-text: #ded8ce;
+    --navigation-select: #d4977b24;
+    --border: #3b3833;
+    --borderWidth: 1px;
+    --player: #22211e;
+    --player-darker: #1c1b19;
+    --player-slider: #504a42;
+    --player-slider-progress: #d4977b;
+    --text: #ded8ce;
+    --small-text: #aaa297;
+    --song-performer: #aaa297;
+    --song-title: #ded8ce;
+    --song-subtitle: #aaa297;
+    --song-playing: #44342c;
+    --song-hover: #d4977b10;
+    --item: #2d2b27;
+    --item-hover: #37332d;
+    --item-disabled: #242320;
+    --field: #211f1c;
+    --icons: #b3aa9d;
+    --icons-hover: #e2aa90;
+    --icons-disabled: #655e54;
+    --no-cover: #c29b80;
+    --no-cover-background: #383029;
+    --links: #d4977b;
+    --links-active: #e2aa90;
+    --links-hover: #e2aa90;
+    --buttons-text: #241d19;
+    --tooltip: #3d3831;
+    --tooltip-text: #e5ddd1;
+    --settings-view: #292723;
+    --switch-unchecked: #71695f;
+    --skeleton-background: #302d28;
+    --skeleton-highlight: #3a3630;
 }
 
-html.classic-mode.acryl {
-    --song-playing: #10101075;
-    --backdrop: #0a0a0ad9 !important;
-    --settings-view: #1d1d1dd9 !important;
+/* Keep the test opaque and legible even if Acrylic is enabled. */
+html.claude-cream-mode.acryl {
+    --backdrop: #262522;
+    --settings-view: #292723;
+    --song-playing: #44342c;
+}
+
+html.claude-cream-mode body {
+    font-family: "Segoe UI Variable Text", "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Do not override icon fonts, generic spans, or fixed row metrics. */
+html.claude-cream-mode :is(h1, h2, h3) {
+    font-family: "Segoe UI Variable Display", "Segoe UI", sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+}
+
+html.claude-cream-mode ::selection {
+    color: #eee4d8;
+    background: #704b39;
+}
+
+/* Visual treatment only: existing padding, width and height are preserved. */
+html.claude-cream-mode button {
+    border-radius: 9px;
+}
+
+html.claude-cream-mode :is(input[type="text"], input[type="search"], input[type="password"], input[type="email"], input[type="number"], input:not([type]), textarea) {
+    font-family: "Segoe UI Variable Text", "Segoe UI", sans-serif;
+    color: var(--text);
+    background-color: var(--field);
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 1px #454038, 0 1px 2px #00000020;
+    caret-color: var(--secondary);
+}
+
+html.claude-cream-mode :is(input, textarea)::placeholder {
+    color: #a69c8e;
+    opacity: 1;
+}
+
+html.claude-cream-mode :is(button, a[href], input, textarea, select, [role="button"], [tabindex]):focus-visible {
+    outline: 2px solid #d4977b !important;
+    outline-offset: 2px;
+}
+
+html.claude-cream-mode :is(dialog, [role="dialog"]) {
+    color: var(--text);
+    background-color: var(--primary);
+    border-radius: 16px;
+    box-shadow: 0 2px 6px #00000026, 0 16px 48px #00000059;
+}
+
+html.claude-cream-mode dialog::backdrop {
+    background: #00000066;
+}
+
+html.claude-cream-mode [role="tooltip"] {
+    border-radius: 7px;
+    box-shadow: 0 4px 12px #00000040;
+}
+
+/* Component polish: selectors verified against installed Meridius 3.4 CSS.
+   Preserve layout metrics and the existing action overlays. */
+html.claude-cream-mode #left-container {
+    box-shadow: 1px 0 0 #ffffff06, 4px 0 16px #00000012;
+}
+
+html.claude-cream-mode #left-container .nav-item-link {
+    border-radius: 9px;
+}
+
+html.claude-cream-mode #left-container .nav-item-link.active {
+    background-color: #d4977b19;
+    box-shadow: inset 0 0 0 1px #d4977b14;
+}
+
+html.claude-cream-mode #left-container .nav-item-link:not(.active):hover {
+    background-color: #ffffff08;
+}
+
+html.claude-cream-mode #player {
+    background: linear-gradient(180deg, #292622 0%, #22211e 100%);
+    border-top-color: #d4977b24;
+    box-shadow: 0 -4px 20px #00000026;
+}
+
+/* Rounded cover and overlay corners share the same radius. */
+html.claude-cream-mode .playlist-main {
+    border-radius: 12px;
+    box-shadow: 0 2px 4px #00000024, 0 6px 16px #00000020;
+    transition: transform 150ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+html.claude-cream-mode .playlist-main-cover {
+    border-radius: 12px;
+    outline: 1px solid #ffffff12;
+    outline-offset: -1px;
+}
+
+html.claude-cream-mode .playlist-info,
+html.claude-cream-mode .playlist-info-actions {
+    border-radius: 12px;
+}
+
+html.claude-cream-mode .playlist-info-actions {
+    background-color: #17151299;
+    transition: opacity 150ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+html.claude-cream-mode .playlist-info-title {
+    background: linear-gradient(180deg, #211d1980 0%, #211d19ed 100%);
+    border-radius: 0 0 12px 12px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+html.claude-cream-mode .playlist-info-title-text {
+    color: #f0e7db;
+    font-size: 12px;
+    font-weight: 600;
+    text-shadow: 0 1px 3px #00000080;
+}
+
+html.claude-cream-mode .playlist:hover .playlist-main {
+    transform: translateY(-2px);
+}
+
+html.claude-cream-mode .playlist:focus-within .playlist-main {
+    outline: 2px solid var(--secondary);
+    outline-offset: 3px;
+}
+
+/* Inset accents do not change dimensions of virtualized song rows. */
+html.claude-cream-mode .song {
+    border-radius: 8px;
+}
+
+html.claude-cream-mode .song.playing {
+    background-color: #d4977b16;
+    box-shadow: inset 2px 0 0 #d4977b99;
+}
+
+/* Respect reduced motion, including the app's original card zoom. */
+@media (prefers-reduced-motion: reduce) {
+    html.claude-cream-mode .playlist-main,
+    html.claude-cream-mode .playlist-info-actions {
+        transition: none;
+    }
+
+    html.claude-cream-mode .playlist:hover .playlist-main {
+        transform: none;
+    }
 }
