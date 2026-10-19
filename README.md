@@ -2,7 +2,8 @@
 
 Неофициальная экспериментальная тёмная тема для [Meridius](https://github.com/PurpleHorrorRus/Meridius): почти чёрный фон, графитовые карточки и мягкие терракотовые акценты.
 
-![alt text](merisius.png)
+![alt text](example.png)
+![alt text](example2.png)
 
 Визуальное направление вдохновлено палитрой Claude и галерейной подачей Pryzm. Проект не связан с Anthropic, Claude или авторами Pryzm и не является их официальным продуктом.
 
